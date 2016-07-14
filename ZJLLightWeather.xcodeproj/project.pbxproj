@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AFEDA75F59123D8C2EF6964 /* libPods-ZJLLightWeatherUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B771BA81533F09028EF69F0A /* libPods-ZJLLightWeatherUITests.a */; };
+		2987D36AACE49EFAD95ECF24 /* libPods-ZJLLightWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE3E5ACA8E91E56B7E9F10E /* libPods-ZJLLightWeather.a */; };
+		6B01E720EC4A02E2199EBB10 /* libPods-ZJLLightWeatherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEA9972C295E4A0E1674ABB /* libPods-ZJLLightWeatherTests.a */; };
+		CA088CCD1D3826D9005B046C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088CCC1D3826D9005B046C /* main.m */; };
+		CA088CD01D3826D9005B046C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088CCF1D3826D9005B046C /* AppDelegate.m */; };
+		CA088CD61D3826D9005B046C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA088CD41D3826D9005B046C /* Main.storyboard */; };
+		CA088CD81D3826D9005B046C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA088CD71D3826D9005B046C /* Assets.xcassets */; };
+		CA088CDB1D3826D9005B046C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA088CD91D3826D9005B046C /* LaunchScreen.storyboard */; };
+		CA088CE61D3826D9005B046C /* ZJLLightWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088CE51D3826D9005B046C /* ZJLLightWeatherTests.m */; };
+		CA088CF11D3826D9005B046C /* ZJLLightWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088CF01D3826D9005B046C /* ZJLLightWeatherUITests.m */; };
+		CA088CFF1D382707005B046C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088CFE1D382707005B046C /* MapKit.framework */; };
+		CA088D011D38270F005B046C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088D001D38270F005B046C /* CoreText.framework */; };
+		CA088D031D382718005B046C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088D021D382718005B046C /* CoreLocation.framework */; };
+		CA088D051D382729005B046C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088D041D382729005B046C /* MobileCoreServices.framework */; };
+		CA088D071D382732005B046C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088D061D382732005B046C /* SystemConfiguration.framework */; };
+		CA088D091D38274B005B046C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA088D081D38274B005B046C /* QuartzCore.framework */; };
+		CA088D131D3829C4005B046C /* ZJLWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D121D3829C4005B046C /* ZJLWeatherView.m */; };
+		CA088D161D3829DF005B046C /* ZJLWeatherScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D151D3829DF005B046C /* ZJLWeatherScrollView.m */; };
+		CA088D191D382A0D005B046C /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D181D382A0D005B046C /* MainPageViewController.m */; };
+		CA088D1C1D382A67005B046C /* MainPageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D1B1D382A67005B046C /* MainPageViewModel.m */; };
+		CA088D311D382C89005B046C /* NSString+Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D2E1D382C89005B046C /* NSString+Substring.m */; };
+		CA088D321D382C89005B046C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D301D382C89005B046C /* UIImage+ImageEffects.m */; };
+		CA088D351D382F16005B046C /* ZJLWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D341D382F16005B046C /* ZJLWeatherData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA088CE21D3826D9005B046C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA088CC01D3826D9005B046C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA088CC71D3826D9005B046C;
+			remoteInfo = ZJLLightWeather;
+		};
+		CA088CED1D3826D9005B046C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA088CC01D3826D9005B046C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA088CC71D3826D9005B046C;
+			remoteInfo = ZJLLightWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BEA9972C295E4A0E1674ABB /* libPods-ZJLLightWeatherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJLLightWeatherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A73BD5BCAD8996DFB3887FB /* Pods-ZJLLightWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeatherTests/Pods-ZJLLightWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E471522BD5AC9951168B314 /* Pods-ZJLLightWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeatherTests/Pods-ZJLLightWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30C895C65A6BDB7CA91C4B4A /* Pods-ZJLLightWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeather/Pods-ZJLLightWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		3EE3E5ACA8E91E56B7E9F10E /* libPods-ZJLLightWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJLLightWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F94456D0F7178544472A185 /* Pods-ZJLLightWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeatherUITests/Pods-ZJLLightWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F0D99D2A92FA2C4CBC0BF81 /* Pods-ZJLLightWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeather/Pods-ZJLLightWeather.release.xcconfig"; sourceTree = "<group>"; };
+		AC4318FEFC9835AD75916AE4 /* Pods-ZJLLightWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZJLLightWeatherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZJLLightWeatherUITests/Pods-ZJLLightWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B771BA81533F09028EF69F0A /* libPods-ZJLLightWeatherUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZJLLightWeatherUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA088CC81D3826D9005B046C /* ZJLLightWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJLLightWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA088CCC1D3826D9005B046C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA088CCE1D3826D9005B046C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA088CCF1D3826D9005B046C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA088CD51D3826D9005B046C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA088CD71D3826D9005B046C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA088CDA1D3826D9005B046C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA088CDC1D3826D9005B046C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA088CE11D3826D9005B046C /* ZJLLightWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJLLightWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA088CE51D3826D9005B046C /* ZJLLightWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJLLightWeatherTests.m; sourceTree = "<group>"; };
+		CA088CE71D3826D9005B046C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA088CEC1D3826D9005B046C /* ZJLLightWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZJLLightWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA088CF01D3826D9005B046C /* ZJLLightWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJLLightWeatherUITests.m; sourceTree = "<group>"; };
+		CA088CF21D3826D9005B046C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA088CFE1D382707005B046C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CA088D001D38270F005B046C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		CA088D021D382718005B046C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CA088D041D382729005B046C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CA088D061D382732005B046C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CA088D081D38274B005B046C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CA088D111D3829C4005B046C /* ZJLWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherView.h; path = Views/ZJLWeatherView.h; sourceTree = "<group>"; };
+		CA088D121D3829C4005B046C /* ZJLWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherView.m; path = Views/ZJLWeatherView.m; sourceTree = "<group>"; };
+		CA088D141D3829DF005B046C /* ZJLWeatherScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherScrollView.h; path = Views/ZJLWeatherScrollView.h; sourceTree = "<group>"; };
+		CA088D151D3829DF005B046C /* ZJLWeatherScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherScrollView.m; path = Views/ZJLWeatherScrollView.m; sourceTree = "<group>"; };
+		CA088D171D382A0D005B046C /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainPageViewController.h; path = Controllers/MainPageViewController.h; sourceTree = "<group>"; };
+		CA088D181D382A0D005B046C /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainPageViewController.m; path = Controllers/MainPageViewController.m; sourceTree = "<group>"; };
+		CA088D1A1D382A67005B046C /* MainPageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainPageViewModel.h; path = ViewModels/MainPageViewModel.h; sourceTree = "<group>"; };
+		CA088D1B1D382A67005B046C /* MainPageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainPageViewModel.m; path = ViewModels/MainPageViewModel.m; sourceTree = "<group>"; };
+		CA088D2D1D382C89005B046C /* NSString+Substring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Substring.h"; path = "Tools/NSString+Substring.h"; sourceTree = "<group>"; };
+		CA088D2E1D382C89005B046C /* NSString+Substring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Substring.m"; path = "Tools/NSString+Substring.m"; sourceTree = "<group>"; };
+		CA088D2F1D382C89005B046C /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Tools/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CA088D301D382C89005B046C /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Tools/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		CA088D331D382F16005B046C /* ZJLWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherData.h; path = Models/ZJLWeatherData.h; sourceTree = "<group>"; };
+		CA088D341D382F16005B046C /* ZJLWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherData.m; path = Models/ZJLWeatherData.m; sourceTree = "<group>"; };
+		CA088D361D382FDF005B046C /* ZJLLightWeather-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZJLLightWeather-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA088CC51D3826D9005B046C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA088D091D38274B005B046C /* QuartzCore.framework in Frameworks */,
+				CA088D071D382732005B046C /* SystemConfiguration.framework in Frameworks */,
+				CA088D051D382729005B046C /* MobileCoreServices.framework in Frameworks */,
+				CA088D031D382718005B046C /* CoreLocation.framework in Frameworks */,
+				CA088D011D38270F005B046C /* CoreText.framework in Frameworks */,
+				CA088CFF1D382707005B046C /* MapKit.framework in Frameworks */,
+				2987D36AACE49EFAD95ECF24 /* libPods-ZJLLightWeather.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CDE1D3826D9005B046C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B01E720EC4A02E2199EBB10 /* libPods-ZJLLightWeatherTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CE91D3826D9005B046C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFEDA75F59123D8C2EF6964 /* libPods-ZJLLightWeatherUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68D084FE2A91F0A28C000C86 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30C895C65A6BDB7CA91C4B4A /* Pods-ZJLLightWeather.debug.xcconfig */,
+				8F0D99D2A92FA2C4CBC0BF81 /* Pods-ZJLLightWeather.release.xcconfig */,
+				1E471522BD5AC9951168B314 /* Pods-ZJLLightWeatherTests.debug.xcconfig */,
+				1A73BD5BCAD8996DFB3887FB /* Pods-ZJLLightWeatherTests.release.xcconfig */,
+				6F94456D0F7178544472A185 /* Pods-ZJLLightWeatherUITests.debug.xcconfig */,
+				AC4318FEFC9835AD75916AE4 /* Pods-ZJLLightWeatherUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A3BCFB7F9A4155EC02F174F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D081D38274B005B046C /* QuartzCore.framework */,
+				CA088D061D382732005B046C /* SystemConfiguration.framework */,
+				CA088D041D382729005B046C /* MobileCoreServices.framework */,
+				CA088D021D382718005B046C /* CoreLocation.framework */,
+				CA088D001D38270F005B046C /* CoreText.framework */,
+				CA088CFE1D382707005B046C /* MapKit.framework */,
+				3EE3E5ACA8E91E56B7E9F10E /* libPods-ZJLLightWeather.a */,
+				0BEA9972C295E4A0E1674ABB /* libPods-ZJLLightWeatherTests.a */,
+				B771BA81533F09028EF69F0A /* libPods-ZJLLightWeatherUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA088CBF1D3826D9005B046C = {
+			isa = PBXGroup;
+			children = (
+				CA088CCA1D3826D9005B046C /* ZJLLightWeather */,
+				CA088CE41D3826D9005B046C /* ZJLLightWeatherTests */,
+				CA088CEF1D3826D9005B046C /* ZJLLightWeatherUITests */,
+				CA088CC91D3826D9005B046C /* Products */,
+				68D084FE2A91F0A28C000C86 /* Pods */,
+				A3BCFB7F9A4155EC02F174F0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CA088CC91D3826D9005B046C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA088CC81D3826D9005B046C /* ZJLLightWeather.app */,
+				CA088CE11D3826D9005B046C /* ZJLLightWeatherTests.xctest */,
+				CA088CEC1D3826D9005B046C /* ZJLLightWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA088CCA1D3826D9005B046C /* ZJLLightWeather */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D1D1D382B54005B046C /* Tools */,
+				CA088D0D1D3828D5005B046C /* Models */,
+				CA088D0C1D3828BC005B046C /* Views */,
+				CA088D0B1D382874005B046C /* ViewModels */,
+				CA088D0A1D38286C005B046C /* Controllers */,
+				CA088CCE1D3826D9005B046C /* AppDelegate.h */,
+				CA088CCF1D3826D9005B046C /* AppDelegate.m */,
+				CA088CD41D3826D9005B046C /* Main.storyboard */,
+				CA088CD71D3826D9005B046C /* Assets.xcassets */,
+				CA088CD91D3826D9005B046C /* LaunchScreen.storyboard */,
+				CA088CCB1D3826D9005B046C /* Supporting Files */,
+			);
+			path = ZJLLightWeather;
+			sourceTree = "<group>";
+		};
+		CA088CCB1D3826D9005B046C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA088CDC1D3826D9005B046C /* Info.plist */,
+				CA088CCC1D3826D9005B046C /* main.m */,
+				CA088D361D382FDF005B046C /* ZJLLightWeather-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA088CE41D3826D9005B046C /* ZJLLightWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA088CE51D3826D9005B046C /* ZJLLightWeatherTests.m */,
+				CA088CE71D3826D9005B046C /* Info.plist */,
+			);
+			path = ZJLLightWeatherTests;
+			sourceTree = "<group>";
+		};
+		CA088CEF1D3826D9005B046C /* ZJLLightWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA088CF01D3826D9005B046C /* ZJLLightWeatherUITests.m */,
+				CA088CF21D3826D9005B046C /* Info.plist */,
+			);
+			path = ZJLLightWeatherUITests;
+			sourceTree = "<group>";
+		};
+		CA088D0A1D38286C005B046C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D171D382A0D005B046C /* MainPageViewController.h */,
+				CA088D181D382A0D005B046C /* MainPageViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CA088D0B1D382874005B046C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D1A1D382A67005B046C /* MainPageViewModel.h */,
+				CA088D1B1D382A67005B046C /* MainPageViewModel.m */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		CA088D0C1D3828BC005B046C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D111D3829C4005B046C /* ZJLWeatherView.h */,
+				CA088D121D3829C4005B046C /* ZJLWeatherView.m */,
+				CA088D141D3829DF005B046C /* ZJLWeatherScrollView.h */,
+				CA088D151D3829DF005B046C /* ZJLWeatherScrollView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CA088D0D1D3828D5005B046C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D331D382F16005B046C /* ZJLWeatherData.h */,
+				CA088D341D382F16005B046C /* ZJLWeatherData.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CA088D1D1D382B54005B046C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CA088D2D1D382C89005B046C /* NSString+Substring.h */,
+				CA088D2E1D382C89005B046C /* NSString+Substring.m */,
+				CA088D2F1D382C89005B046C /* UIImage+ImageEffects.h */,
+				CA088D301D382C89005B046C /* UIImage+ImageEffects.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA088CC71D3826D9005B046C /* ZJLLightWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA088CF51D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeather" */;
+			buildPhases = (
+				0C28C18B15ECC11E16F030BD /* 📦 Check Pods Manifest.lock */,
+				CA088CC41D3826D9005B046C /* Sources */,
+				CA088CC51D3826D9005B046C /* Frameworks */,
+				CA088CC61D3826D9005B046C /* Resources */,
+				BA991A7D3E986CAC02C90BCF /* 📦 Embed Pods Frameworks */,
+				BC7EA7A1746D8B90FA83BE45 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZJLLightWeather;
+			productName = ZJLLightWeather;
+			productReference = CA088CC81D3826D9005B046C /* ZJLLightWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA088CE01D3826D9005B046C /* ZJLLightWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA088CF81D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeatherTests" */;
+			buildPhases = (
+				21EEAF7428F2C93C5A1D34B5 /* 📦 Check Pods Manifest.lock */,
+				CA088CDD1D3826D9005B046C /* Sources */,
+				CA088CDE1D3826D9005B046C /* Frameworks */,
+				CA088CDF1D3826D9005B046C /* Resources */,
+				B24A49825B47114061393774 /* 📦 Embed Pods Frameworks */,
+				ABE663CD4A2C7B14730F79B4 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA088CE31D3826D9005B046C /* PBXTargetDependency */,
+			);
+			name = ZJLLightWeatherTests;
+			productName = ZJLLightWeatherTests;
+			productReference = CA088CE11D3826D9005B046C /* ZJLLightWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA088CEB1D3826D9005B046C /* ZJLLightWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA088CFB1D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeatherUITests" */;
+			buildPhases = (
+				007EEDFAB81DF4E07AA686D6 /* 📦 Check Pods Manifest.lock */,
+				CA088CE81D3826D9005B046C /* Sources */,
+				CA088CE91D3826D9005B046C /* Frameworks */,
+				CA088CEA1D3826D9005B046C /* Resources */,
+				283E19577D936DF4FDC20ED0 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA088CEE1D3826D9005B046C /* PBXTargetDependency */,
+			);
+			name = ZJLLightWeatherUITests;
+			productName = ZJLLightWeatherUITests;
+			productReference = CA088CEC1D3826D9005B046C /* ZJLLightWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA088CC01D3826D9005B046C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ZhongZhongzhong;
+				TargetAttributes = {
+					CA088CC71D3826D9005B046C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D667J2X7L2;
+					};
+					CA088CE01D3826D9005B046C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D667J2X7L2;
+						TestTargetID = CA088CC71D3826D9005B046C;
+					};
+					CA088CEB1D3826D9005B046C = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D667J2X7L2;
+						TestTargetID = CA088CC71D3826D9005B046C;
+					};
+				};
+			};
+			buildConfigurationList = CA088CC31D3826D9005B046C /* Build configuration list for PBXProject "ZJLLightWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA088CBF1D3826D9005B046C;
+			productRefGroup = CA088CC91D3826D9005B046C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA088CC71D3826D9005B046C /* ZJLLightWeather */,
+				CA088CE01D3826D9005B046C /* ZJLLightWeatherTests */,
+				CA088CEB1D3826D9005B046C /* ZJLLightWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA088CC61D3826D9005B046C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA088CDB1D3826D9005B046C /* LaunchScreen.storyboard in Resources */,
+				CA088CD81D3826D9005B046C /* Assets.xcassets in Resources */,
+				CA088CD61D3826D9005B046C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CDF1D3826D9005B046C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CEA1D3826D9005B046C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		007EEDFAB81DF4E07AA686D6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0C28C18B15ECC11E16F030BD /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		21EEAF7428F2C93C5A1D34B5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		283E19577D936DF4FDC20ED0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJLLightWeatherUITests/Pods-ZJLLightWeatherUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABE663CD4A2C7B14730F79B4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJLLightWeatherTests/Pods-ZJLLightWeatherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B24A49825B47114061393774 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJLLightWeatherTests/Pods-ZJLLightWeatherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA991A7D3E986CAC02C90BCF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJLLightWeather/Pods-ZJLLightWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC7EA7A1746D8B90FA83BE45 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZJLLightWeather/Pods-ZJLLightWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA088CC41D3826D9005B046C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA088CD01D3826D9005B046C /* AppDelegate.m in Sources */,
+				CA088CCD1D3826D9005B046C /* main.m in Sources */,
+				CA088D191D382A0D005B046C /* MainPageViewController.m in Sources */,
+				CA088D311D382C89005B046C /* NSString+Substring.m in Sources */,
+				CA088D161D3829DF005B046C /* ZJLWeatherScrollView.m in Sources */,
+				CA088D321D382C89005B046C /* UIImage+ImageEffects.m in Sources */,
+				CA088D131D3829C4005B046C /* ZJLWeatherView.m in Sources */,
+				CA088D351D382F16005B046C /* ZJLWeatherData.m in Sources */,
+				CA088D1C1D382A67005B046C /* MainPageViewModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CDD1D3826D9005B046C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA088CE61D3826D9005B046C /* ZJLLightWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA088CE81D3826D9005B046C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA088CF11D3826D9005B046C /* ZJLLightWeatherUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA088CE31D3826D9005B046C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA088CC71D3826D9005B046C /* ZJLLightWeather */;
+			targetProxy = CA088CE21D3826D9005B046C /* PBXContainerItemProxy */;
+		};
+		CA088CEE1D3826D9005B046C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA088CC71D3826D9005B046C /* ZJLLightWeather */;
+			targetProxy = CA088CED1D3826D9005B046C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA088CD41D3826D9005B046C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA088CD51D3826D9005B046C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA088CD91D3826D9005B046C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA088CDA1D3826D9005B046C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA088CF31D3826D9005B046C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA088CF41D3826D9005B046C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA088CF61D3826D9005B046C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C895C65A6BDB7CA91C4B4A /* Pods-ZJLLightWeather.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "ZJLLightWeather/ZJLLightWeather-Prefix.pch";
+				INFOPLIST_FILE = ZJLLightWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA088CF71D3826D9005B046C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F0D99D2A92FA2C4CBC0BF81 /* Pods-ZJLLightWeather.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "ZJLLightWeather/ZJLLightWeather-Prefix.pch";
+				INFOPLIST_FILE = ZJLLightWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CA088CF91D3826D9005B046C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E471522BD5AC9951168B314 /* Pods-ZJLLightWeatherTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZJLLightWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJLLightWeather.app/ZJLLightWeather";
+			};
+			name = Debug;
+		};
+		CA088CFA1D3826D9005B046C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A73BD5BCAD8996DFB3887FB /* Pods-ZJLLightWeatherTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZJLLightWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZJLLightWeather.app/ZJLLightWeather";
+			};
+			name = Release;
+		};
+		CA088CFC1D3826D9005B046C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F94456D0F7178544472A185 /* Pods-ZJLLightWeatherUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ZJLLightWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZJLLightWeather;
+			};
+			name = Debug;
+		};
+		CA088CFD1D3826D9005B046C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4318FEFC9835AD75916AE4 /* Pods-ZJLLightWeatherUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ZJLLightWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZJLLightWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZJLLightWeather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA088CC31D3826D9005B046C /* Build configuration list for PBXProject "ZJLLightWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA088CF31D3826D9005B046C /* Debug */,
+				CA088CF41D3826D9005B046C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA088CF51D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA088CF61D3826D9005B046C /* Debug */,
+				CA088CF71D3826D9005B046C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA088CF81D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA088CF91D3826D9005B046C /* Debug */,
+				CA088CFA1D3826D9005B046C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA088CFB1D3826D9005B046C /* Build configuration list for PBXNativeTarget "ZJLLightWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA088CFC1D3826D9005B046C /* Debug */,
+				CA088CFD1D3826D9005B046C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA088CC01D3826D9005B046C /* Project object */;
+}
