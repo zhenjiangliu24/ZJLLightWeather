@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJLWeatherScrollView : UIScrollView
-
+- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index;
+- (void)addSubview:(UIView *)view show:(BOOL)isShow;
+- (void)removeSubView:(UIView *)view;
 @end
