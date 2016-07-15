@@ -7,6 +7,7 @@
 //
 
 #import "MainPageViewController.h"
+#import "ZJLWeatherView.h"
 
 @interface MainPageViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    ZJLWeatherView *view = [[ZJLWeatherView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning {
