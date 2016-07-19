@@ -492,7 +492,8 @@
 - (void)didChangeTempTypeTo:(ZJLTempScale)tempScale
 {
     for (ZJLWeatherView *view in self.mainScrollView.subviews) {
-        
+        ZJLWeatherData *data = [self.weatherData objectForKey:[NSNumber numberWithInt:view.tag]];
+        [self updateWeatherView:view withData:data];
     }
 }
 
