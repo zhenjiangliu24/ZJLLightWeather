@@ -33,6 +33,7 @@
 		CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */; };
 		CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */; };
 		CAFB10EF1D3AB90D0092B906 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */; };
+		CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherDownloader.m; path = ViewModels/ZJLWeatherDownloader.m; sourceTree = "<group>"; };
 		CAFB10ED1D3AB90D0092B906 /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = Fonts/Climacons.h; sourceTree = "<group>"; };
 		CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Climacons.ttf; path = Fonts/Climacons.ttf; sourceTree = "<group>"; };
+		CAFE076A1D3D6F4B00F75661 /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLocationViewController.h; path = Controllers/AddLocationViewController.h; sourceTree = "<group>"; };
+		CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddLocationViewController.m; path = Controllers/AddLocationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 			children = (
 				CA088D171D382A0D005B046C /* MainPageViewController.h */,
 				CA088D181D382A0D005B046C /* MainPageViewController.m */,
+				CAFE076A1D3D6F4B00F75661 /* AddLocationViewController.h */,
+				CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				CA088CD01D3826D9005B046C /* AppDelegate.m in Sources */,
 				CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */,
 				CA088CCD1D3826D9005B046C /* main.m in Sources */,
+				CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */,
 				CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */,
 				CA088D191D382A0D005B046C /* MainPageViewController.m in Sources */,
 				CA088D311D382C89005B046C /* NSString+Substring.m in Sources */,

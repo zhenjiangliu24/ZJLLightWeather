@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZJLWeatherView.h"
+#import "AddLocationViewController.h"
 
-@interface MainPageViewController : UIViewController
+@interface MainPageViewController : UIViewController<UIScrollViewDelegate, CLLocationManagerDelegate, ZJLWeatherViewDelegate, AddLocationViewControllerDelegate>
+@property (nonatomic,readonly,strong) CLLocationManager *locationManager;
+- (void)updateWeatherData;
 
 @end

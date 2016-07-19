@@ -10,7 +10,7 @@
 @class ZJLWeatherData;
 
 typedef NS_ENUM(NSInteger, ZJLTempScale){
-    ZJLFa,
+    ZJLFa = 0,
     ZJLCe
 };
 

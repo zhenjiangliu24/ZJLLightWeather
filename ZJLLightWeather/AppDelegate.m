@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainPageViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor blackColor];
+    MainPageViewController *mainVC = [MainPageViewController new];
+    self.window.rootViewController = mainVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

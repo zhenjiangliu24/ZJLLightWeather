@@ -25,7 +25,7 @@
 @property (nonatomic, readwrite, strong) UILabel *followingTwoIcon;
 @property (nonatomic, readwrite, strong) UILabel *followingThreeLabel;
 @property (nonatomic, readwrite, strong) UILabel *followingThreeIcon;
-@property (nonatomic, readwrite, strong) UIActivityIndicatorView *loadingView;
+@property (nonatomic, readwrite, strong) UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *pan;
 
@@ -46,8 +46,7 @@
         [self addSubview:_mainContainer];
         
         _subContainer = [[UIView alloc] init];
-        //_subContainer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.25];
-        _subContainer.backgroundColor = [UIColor lightGrayColor];
+        _subContainer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.25];
         [_mainContainer addSubview:_subContainer];
         
         
@@ -79,21 +78,21 @@
         [_mainContainer addSubview:_locationLabel];
         
         _currentTempLabel = [[UILabel alloc] init];
-        _currentTempLabel.backgroundColor = [UIColor redColor];
+        _currentTempLabel.backgroundColor = [UIColor clearColor];
         _currentTempLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:self.frame.size.height/12];
         _currentTempLabel.textColor = [UIColor whiteColor];
         _currentTempLabel.textAlignment = NSTextAlignmentCenter;
         [_subContainer addSubview:_currentTempLabel];
         
         _highTempLabel = [[UILabel alloc] init];
-        _highTempLabel.backgroundColor = [UIColor yellowColor];
+        _highTempLabel.backgroundColor = [UIColor clearColor];
         _highTempLabel.textColor = [UIColor whiteColor];
         _highTempLabel.textAlignment = NSTextAlignmentCenter;
         _highTempLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:20];
         [_subContainer addSubview:_highTempLabel];
         
         _lowTempLabel = [[UILabel alloc] init];
-        _lowTempLabel.backgroundColor = [UIColor greenColor];
+        _lowTempLabel.backgroundColor = [UIColor clearColor];
         _lowTempLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:20];
         _lowTempLabel.textColor = [UIColor whiteColor];
         _lowTempLabel.textAlignment = NSTextAlignmentCenter;
@@ -107,35 +106,35 @@
         [_subContainer addSubview:_followingOneLabel];
         
         _followingTwoLabel = [[UILabel alloc] init];
-        _followingTwoLabel.backgroundColor = [UIColor blueColor];
+        _followingTwoLabel.backgroundColor = [UIColor clearColor];
         _followingTwoLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
         _followingTwoLabel.textColor = [UIColor whiteColor];
         _followingTwoLabel.textAlignment = NSTextAlignmentCenter;
         [_subContainer addSubview:_followingTwoLabel];
         
         _followingThreeLabel = [[UILabel alloc] init];
-        _followingThreeLabel.backgroundColor = [UIColor yellowColor];
+        _followingThreeLabel.backgroundColor = [UIColor clearColor];
         _followingThreeLabel.textColor = [UIColor whiteColor];
         _followingThreeLabel.textAlignment = NSTextAlignmentCenter;
         _followingThreeLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
         [_subContainer addSubview:_followingThreeLabel];
         
         _followingOneIcon = [[UILabel alloc] init];
-        _followingOneIcon.backgroundColor = [UIColor yellowColor];
+        _followingOneIcon.backgroundColor = [UIColor clearColor];
         _followingOneIcon.textColor = [UIColor whiteColor];
         _followingOneIcon.textAlignment = NSTextAlignmentCenter;
         _followingOneIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
         [_subContainer addSubview:_followingOneIcon];
         
         _followingTwoIcon = [[UILabel alloc] init];
-        _followingTwoIcon.backgroundColor = [UIColor greenColor];
+        _followingTwoIcon.backgroundColor = [UIColor clearColor];
         _followingTwoIcon.textColor = [UIColor whiteColor];
         _followingTwoIcon.textAlignment = NSTextAlignmentCenter;
         _followingTwoIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
         [_subContainer addSubview:_followingTwoIcon];
         
         _followingThreeIcon = [[UILabel alloc] init];
-        _followingThreeIcon.backgroundColor = [UIColor brownColor];
+        _followingThreeIcon.backgroundColor = [UIColor clearColor];
         _followingThreeIcon.textColor = [UIColor whiteColor];
         _followingThreeIcon.textAlignment = NSTextAlignmentCenter;
         _followingThreeIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
@@ -147,6 +146,10 @@
         _pan.minimumNumberOfTouches = 1;
         _pan.delegate = self;
         [_mainContainer addGestureRecognizer:_pan];
+        
+        self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        self.activityIndicator.center = self.center;
+        [_mainContainer addSubview:self.activityIndicator];
     }
     return self;
 }

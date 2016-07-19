@@ -55,9 +55,9 @@ NSString *const API = @"d5fda838420e3f7f";
             NSLog(@"Error: %@", error);
         } else {
             NSLog(@"%@ %@", response, responseObject);
-            NSData *data = (NSData *)responseObject;
+            //NSData *data = (NSData *)responseObject;
             @try {
-                NSDictionary *json = [self serializedData:data];
+                NSDictionary *json = (NSDictionary *)responseObject;
                 ZJLWeatherData *weather = [self dataFromJSON:json];
                 if (placemark) {
                     weather.place = placemark;

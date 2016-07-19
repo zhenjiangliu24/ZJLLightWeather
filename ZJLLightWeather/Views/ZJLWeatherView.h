@@ -31,5 +31,5 @@
 @property (nonatomic, readonly, strong) UILabel *followingTwoIcon;
 @property (nonatomic, readonly, strong) UILabel *followingThreeLabel;
 @property (nonatomic, readonly, strong) UILabel *followingThreeIcon;
-@property (nonatomic, readonly, strong) UIActivityIndicatorView *loadingView;
+@property (nonatomic, readonly, strong) UIActivityIndicatorView *activityIndicator;
 @end
