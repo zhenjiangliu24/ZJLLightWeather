@@ -12,7 +12,7 @@
 @protocol SettingViewControllerDelegate <NSObject>
 @required
 - (void)didMoveViewFromSource:(NSInteger)sourceIndex to:(NSInteger)destinationIndex;
-- (void)didRemoveViewWithIndex:(NSInteger)index;
+- (void)didRemoveViewWithTag:(NSInteger)tag;
 - (void)didChangeTempTypeTo:(ZJLTempScale)tempScale;
 - (void)dismissSettingVC;
 @end

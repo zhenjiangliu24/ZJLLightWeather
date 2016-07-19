@@ -5,7 +5,6 @@
 //  Created by ZhongZhongzhong on 16/7/14.
 //  Copyright © 2016年 ZhongZhongzhong. All rights reserved.
 //
-
 #import "MainPageViewController.h"
 #import "ZJLWeatherScrollView.h"
 #import "ZJLWeatherData.h"
@@ -36,6 +35,7 @@
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) AddLocationViewController *addVC;
+@property (nonatomic, strong) SettingViewController *settingVC;
 @end
 
 @implementation MainPageViewController
@@ -254,6 +254,17 @@
 
 - (void)settingsButtonPressed
 {
+    NSMutableArray *locations = [NSMutableArray new];
+    for (ZJLWeatherView *view in self.mainScrollView.subviews) {
+        if (view.tag != kLOCAL_WEATHER_VIEW_TAG) {
+            NSArray *data = @[view.locationLabel.text,[NSNumber numberWithInt:view.tag]];
+            [locations addObject:data];
+        }
+    }
+    self.settingVC = [[SettingViewController alloc] init];
+    self.settingVC.delegate = self;
+    self.settingVC.locations = locations;
+    [self presentViewController:self.settingVC animated:YES completion:nil];
     
 }
 
@@ -432,6 +443,57 @@
         self.descriptionLabel.alpha = 1.0;
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - setting vc delegate
+- (void)didMoveViewFromSource:(NSInteger)sourceIndex to:(NSInteger)destinationIndex
+{
+    NSNumber *tag = [self.weatherList objectAtIndex:sourceIndex];
+    [self.weatherList removeObjectAtIndex:sourceIndex];
+    [self.weatherList insertObject:tag atIndex:destinationIndex];
+    [ZJLDataManager setWeatherTag:self.weatherList];
+    if ([self.weatherData objectForKey:[NSNumber numberWithInteger:kLOCAL_WEATHER_VIEW_TAG]]) {
+        destinationIndex += 1;
+    }
+    for (ZJLWeatherView *view in self.mainScrollView.subviews) {
+        if (view.tag == tag.integerValue) {
+            [self.mainScrollView removeSubView:view];
+            [self.mainScrollView insertSubview:view atIndex:destinationIndex];
+            break;
+        }
+    }
+    
+}
+
+- (void)didRemoveViewWithTag:(NSInteger)tag
+{
+    for (ZJLWeatherView *view in self.mainScrollView.subviews) {
+        if (view.tag == tag) {
+            [self.mainScrollView removeSubView:view];
+            self.pageControl.numberOfPages -= 1;
+        }
+    }
+    [self.weatherList removeObject:[NSNumber numberWithInt:tag]];
+    [self.weatherData removeObjectForKey:[NSNumber numberWithInt:tag]];
+    [ZJLDataManager setWeatherTag:self.weatherList];
+    [ZJLDataManager setWeatherData:self.weatherData];
+}
+
+- (void)dismissSettingVC
+{
+    [self showBlurredOverlayView:NO];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.iconLabel.alpha = 1.0;
+        self.descriptionLabel.alpha = 1.0;
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didChangeTempTypeTo:(ZJLTempScale)tempScale
+{
+    for (ZJLWeatherView *view in self.mainScrollView.subviews) {
+        
+    }
 }
 
 #pragma mark UIScrollViewDelegate Methods
