@@ -13,9 +13,9 @@
 
 @interface ZJLWeatherView()
 @property (nonatomic, readwrite, strong) UILabel *dateLabel;
-@property (nonatomic, readwrite, strong) UILabel *iconLabel;
-@property (nonatomic, readwrite, strong) UILabel *descriptionLabel;
-@property (nonatomic, readwrite, strong) UILabel *locationLabel;
+//@property (nonatomic, readwrite, strong) UILabel *iconLabel;
+//@property (nonatomic, readwrite, strong) UILabel *descriptionLabel;
+//@property (nonatomic, readwrite, strong) UILabel *locationLabel;
 @property (nonatomic, readwrite, strong) UILabel *currentTempLabel;
 @property (nonatomic, readwrite, strong) UILabel *highTempLabel;
 @property (nonatomic, readwrite, strong) UILabel *lowTempLabel;

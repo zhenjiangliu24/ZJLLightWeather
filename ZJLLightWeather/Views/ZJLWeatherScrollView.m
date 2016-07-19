@@ -18,6 +18,7 @@
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.alwaysBounceHorizontal = YES;
+        
     }
     return self;
 }

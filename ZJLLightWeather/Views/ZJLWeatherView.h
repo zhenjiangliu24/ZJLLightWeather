@@ -19,9 +19,9 @@
 @property (nonatomic, assign) BOOL isLocal;
 @property (nonatomic, weak) id<ZJLWeatherViewDelegate> delegate;
 @property (nonatomic, readonly, strong) UILabel *dateLabel;
-@property (nonatomic, readonly, strong) UILabel *iconLabel;
-@property (nonatomic, readonly, strong) UILabel *descriptionLabel;
-@property (nonatomic, readonly, strong) UILabel *locationLabel;
+@property (nonatomic, strong) UILabel *iconLabel;
+@property (nonatomic, strong) UILabel *descriptionLabel;
+@property (nonatomic, strong) UILabel *locationLabel;
 @property (nonatomic, readonly, strong) UILabel *currentTempLabel;
 @property (nonatomic, readonly, strong) UILabel *highTempLabel;
 @property (nonatomic, readonly, strong) UILabel *lowTempLabel;

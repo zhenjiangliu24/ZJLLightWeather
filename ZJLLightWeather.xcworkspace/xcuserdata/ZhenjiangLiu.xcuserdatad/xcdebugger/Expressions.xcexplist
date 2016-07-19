@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__68-[AddLocationViewController updateSearchResultsForSearchController:]_block_invoke:AddLocationViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

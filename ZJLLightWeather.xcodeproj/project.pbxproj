@@ -30,6 +30,7 @@
 		CA088D311D382C89005B046C /* NSString+Substring.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D2E1D382C89005B046C /* NSString+Substring.m */; };
 		CA088D321D382C89005B046C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D301D382C89005B046C /* UIImage+ImageEffects.m */; };
 		CA088D351D382F16005B046C /* ZJLWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA088D341D382F16005B046C /* ZJLWeatherData.m */; };
+		CA0D522C1D3E68A100465AF5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D522B1D3E68A100465AF5 /* SettingViewController.m */; };
 		CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */; };
 		CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */; };
 		CAFB10EF1D3AB90D0092B906 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */; };
@@ -98,6 +99,8 @@
 		CA088D331D382F16005B046C /* ZJLWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherData.h; path = Models/ZJLWeatherData.h; sourceTree = "<group>"; };
 		CA088D341D382F16005B046C /* ZJLWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherData.m; path = Models/ZJLWeatherData.m; sourceTree = "<group>"; };
 		CA088D361D382FDF005B046C /* ZJLLightWeather-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZJLLightWeather-Prefix.pch"; sourceTree = "<group>"; };
+		CA0D522A1D3E68A100465AF5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = Controllers/SettingViewController.h; sourceTree = "<group>"; };
+		CA0D522B1D3E68A100465AF5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = Controllers/SettingViewController.m; sourceTree = "<group>"; };
 		CA46A7B41D39CAC2003989C3 /* ZJLDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLDataManager.h; path = ViewModels/ZJLDataManager.h; sourceTree = "<group>"; };
 		CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLDataManager.m; path = ViewModels/ZJLDataManager.m; sourceTree = "<group>"; };
 		CA46A7B71D39DF6C003989C3 /* ZJLWeatherDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherDownloader.h; path = ViewModels/ZJLWeatherDownloader.h; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				CA088D181D382A0D005B046C /* MainPageViewController.m */,
 				CAFE076A1D3D6F4B00F75661 /* AddLocationViewController.h */,
 				CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */,
+				CA0D522A1D3E68A100465AF5 /* SettingViewController.h */,
+				CA0D522B1D3E68A100465AF5 /* SettingViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 			files = (
 				CA088CD01D3826D9005B046C /* AppDelegate.m in Sources */,
 				CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */,
+				CA0D522C1D3E68A100465AF5 /* SettingViewController.m in Sources */,
 				CA088CCD1D3826D9005B046C /* main.m in Sources */,
 				CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */,
 				CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */,

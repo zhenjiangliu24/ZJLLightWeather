@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @protocol AddLocationViewControllerDelegate <NSObject>
-
+@required
 - (void)didAddLocationWithPlaceMark:(CLPlacemark *)placemark;
 - (void)dismissAddLocationVC;
-
 @end
 
-@interface AddLocationViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate>
+@interface AddLocationViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate>
 @property (nonatomic, weak) id<AddLocationViewControllerDelegate> delegate;
 @end

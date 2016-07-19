@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UISearchController *searchController;
 // Navigation bar at the top of the view
 @property (strong, nonatomic) UINavigationBar *navigationBar;
-
+@property (nonatomic, strong) UITableView *tableView;
 // Done button inside navigation bar
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 @property BOOL searchControllerWasActive;
@@ -48,6 +48,12 @@
         self.searchController.hidesNavigationBarDuringPresentation = NO;
         self.searchController.searchBar.backgroundColor = [UIColor lightGrayColor];
         self.searchController.searchBar.placeholder = @"Please input the city name";
+        self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+        self.searchController.searchBar.delegate = self;
+        self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        [self.view addSubview:self.tableView];
         self.tableView.tableHeaderView = self.searchController.searchBar;
         [self.searchController.searchBar sizeToFit];
         self.tableView.tableHeaderView = self.searchController.searchBar;
@@ -58,9 +64,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -113,18 +117,24 @@
     // Configure cell for the search results table view
     if(tableView == self.tableView) {
         cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor blackColor];
         CLPlacemark *placemark = [self.searchResult objectAtIndex:indexPath.row];
         NSString *city = placemark.locality;
         NSString *country = placemark.country;
         NSString *cellText = [NSString stringWithFormat:@"%@, %@", city, country];
-        if([[country lowercaseString] isEqualToString:@"united states"]) {
-            NSString *state = placemark.administrativeArea;
-            cellText = [NSString stringWithFormat:@"%@, %@", city, state];
-        }
         cell.textLabel.text = cellText;
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView cellForRowAtIndexPath:indexPath].selected = NO;
+    CLPlacemark *placemark = [self.searchResult objectAtIndex:indexPath.row];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didAddLocationWithPlaceMark:)] && [self.delegate respondsToSelector:@selector(dismissAddLocationVC)]) {
+        [self.delegate didAddLocationWithPlaceMark:placemark];
+        [self.delegate dismissAddLocationVC];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -137,17 +147,28 @@
     return 1;
 }
 
+#pragma mark - search bar delegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dismissAddLocationVC)]) {
+        [self.delegate dismissAddLocationVC];
+    }
+}
+
 #pragma mark - search view controller delegate
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
     NSString *searchString = [searchController.searchBar text];
     [self.geocoder geocodeAddressString:searchString completionHandler: ^ (NSArray *placemarks, NSError *error) {
+        [self.searchResult removeAllObjects];
         for(CLPlacemark *placemark in placemarks) {
             if(placemark.locality) {
                 [self.searchResult addObject:placemark];
             }
         }
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }];
 }
 

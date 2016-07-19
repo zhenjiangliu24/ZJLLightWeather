@@ -17,7 +17,7 @@
 #define LIGHT_FONT      @"HelveticaNeue-Light"
 #define ULTRALIGHT_FONT @"HelveticaNeue-UltraLight"
 #define kLOCAL_WEATHER_VIEW_TAG 0
-#define kUPDATE_FREQ 3600
+#define kUPDATE_FREQ 60
 
 @interface MainPageViewController ()
 @property (nonatomic, strong) ZJLWeatherScrollView *mainScrollView;
@@ -34,6 +34,7 @@
 @property (nonatomic, strong) UIButton *settingButton;
 @property (nonatomic, strong) UIButton *addLocationButton;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) AddLocationViewController *addVC;
 @end
 
@@ -127,6 +128,10 @@
     self.blurredOverlayView.alpha = 0.0;
     [self.blurredOverlayView setFrame:self.view.bounds];
     [self.view addSubview:self.blurredOverlayView];
+    
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)-32, CGRectGetWidth(self.view.frame), 32)];
+    [_pageControl setHidesForSinglePage:YES];
+    [self.view addSubview:_pageControl];
 }
 
 - (void)initSettingButton
@@ -162,6 +167,7 @@
     localView.tag = kLOCAL_WEATHER_VIEW_TAG;
     localView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient5"]];
     [self.mainScrollView insertSubview:localView atIndex:0];
+    _pageControl.numberOfPages += 1;
     ZJLWeatherData *data = [self.weatherData objectForKey:[NSNumber numberWithInt:kLOCAL_WEATHER_VIEW_TAG]];
     if (data) {
         [self updateWeatherView:localView withData:data];
@@ -181,6 +187,7 @@
             view.isLocal = NO;
             view.tag = number.integerValue;
             [self.mainScrollView addSubview:view show:YES];
+            _pageControl.numberOfPages += 1;
             [self updateWeatherView:view withData:data];
         }
     }
@@ -203,13 +210,13 @@
     ZJLTemperatureType highTemp = data.currentDayWeather.highTemperature;
     ZJLTemperatureType lowTemp = data.currentDayWeather.lowTemperature;
     if ([ZJLDataManager tempScale] == ZJLFa) {
-        weatherView.currentTempLabel.text = [NSString stringWithFormat:@"%.0f",current.fahrenheit];
-        weatherView.highTempLabel.text = [NSString stringWithFormat:@"%.0f",highTemp.fahrenheit];
-        weatherView.locationLabel.text = [NSString stringWithFormat:@"%.0f",lowTemp.fahrenheit];
+        weatherView.currentTempLabel.text = [NSString stringWithFormat:@"%.0f°",current.fahrenheit];
+        weatherView.highTempLabel.text = [NSString stringWithFormat:@"H %.0f",highTemp.fahrenheit];
+        weatherView.lowTempLabel.text = [NSString stringWithFormat:@"L %.0f",lowTemp.fahrenheit];
     }else{
-        weatherView.currentTempLabel.text = [NSString stringWithFormat:@"%.0f",current.celsius];
-        weatherView.highTempLabel.text = [NSString stringWithFormat:@"%.0f",highTemp.celsius];
-        weatherView.locationLabel.text = [NSString stringWithFormat:@"%.0f",lowTemp.celsius];
+        weatherView.currentTempLabel.text = [NSString stringWithFormat:@"%.0f℃",current.celsius];
+        weatherView.highTempLabel.text = [NSString stringWithFormat:@"H %.0f",highTemp.celsius];
+        weatherView.lowTempLabel.text = [NSString stringWithFormat:@"H %.0f",lowTemp.celsius];
     }
     
     ZJLWeatherDay *day1 = (ZJLWeatherDay *)[data.followingWeather objectAtIndex:0];
@@ -391,6 +398,42 @@
         }
     }
 }
+
+#pragma mark - add location view controller delegate
+- (void)didAddLocationWithPlaceMark:(CLPlacemark *)placemark
+{
+    ZJLWeatherData *data = [self.weatherData objectForKey:[NSNumber numberWithInteger:placemark.locality.hash]];
+    if (!data) {
+        ZJLWeatherView *newView = [[ZJLWeatherView alloc] initWithFrame:self.view.bounds];
+        newView.delegate = self;
+        newView.tag = placemark.locality.hash;
+        newView.isLocal = NO;
+        newView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient4"]];
+        [self.mainScrollView addSubview:newView show:NO];
+        _pageControl.numberOfPages += 1;
+        [newView.activityIndicator startAnimating];
+        [self.weatherList addObject:[NSNumber numberWithInt:placemark.locality.hash]];
+        [[ZJLWeatherDownloader sharedDownloader] dataForPlaceMark:placemark withTag:newView.tag complete:^(ZJLWeatherData *data, NSError *error) {
+            if (data) {
+                [self downloadDidFinishWithData:data withTag:newView.tag];
+            }else{
+                [self downloadDidFailForWeatherViewWithTag:newView.tag];
+            }
+            [self setBlurredOverlayImage];
+        }];
+    }
+}
+
+- (void)dismissAddLocationVC
+{
+    [self showBlurredOverlayView:NO];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.iconLabel.alpha = 1.0;
+        self.descriptionLabel.alpha = 1.0;
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -410,7 +453,7 @@
     
     //  Update the current page for the page control
     float fractionalPage = self.mainScrollView.contentOffset.x / self.mainScrollView.frame.size.width;
-    //self.pageControl.currentPage = lround(fractionalPage);
+    _pageControl.currentPage = lround(fractionalPage);
 }
 
 - (BOOL)shouldPanWeatherView:(ZJLWeatherView *)weatherView
