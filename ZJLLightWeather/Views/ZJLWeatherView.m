@@ -10,12 +10,10 @@
 
 #define LIGHT_FONT      @"HelveticaNeue-Light"
 #define ULTRALIGHT_FONT @"HelveticaNeue-UltraLight"
+#define CLIMACONS_FONT @"Climacons-Font"
 
 @interface ZJLWeatherView()
 @property (nonatomic, readwrite, strong) UILabel *dateLabel;
-//@property (nonatomic, readwrite, strong) UILabel *iconLabel;
-//@property (nonatomic, readwrite, strong) UILabel *descriptionLabel;
-//@property (nonatomic, readwrite, strong) UILabel *locationLabel;
 @property (nonatomic, readwrite, strong) UILabel *currentTempLabel;
 @property (nonatomic, readwrite, strong) UILabel *highTempLabel;
 @property (nonatomic, readwrite, strong) UILabel *lowTempLabel;
@@ -49,10 +47,16 @@
         _subContainer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.25];
         [_mainContainer addSubview:_subContainer];
         
+        _updateTimeLabel = [[UILabel alloc] init];
+        _updateTimeLabel.backgroundColor = [UIColor clearColor];
+        _updateTimeLabel.font = [UIFont fontWithName:ULTRALIGHT_FONT size:16];
+        _updateTimeLabel.textColor = [UIColor whiteColor];
+        _updateTimeLabel.textAlignment = NSTextAlignmentCenter;
+        [_mainContainer addSubview:_updateTimeLabel];
         
         _iconLabel = [[UILabel alloc] init];
         _iconLabel.backgroundColor = [UIColor clearColor];
-        _iconLabel.font = [UIFont fontWithName:LIGHT_FONT size:self.frame.size.height*0.3125];
+        _iconLabel.font = [UIFont fontWithName:CLIMACONS_FONT size:self.frame.size.height*0.3125];
         _iconLabel.textColor = [UIColor whiteColor];
         _iconLabel.textAlignment = NSTextAlignmentCenter;
         [_mainContainer addSubview:_iconLabel];
@@ -123,21 +127,21 @@
         _followingOneIcon.backgroundColor = [UIColor clearColor];
         _followingOneIcon.textColor = [UIColor whiteColor];
         _followingOneIcon.textAlignment = NSTextAlignmentCenter;
-        _followingOneIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
+        _followingOneIcon.font = [UIFont fontWithName:CLIMACONS_FONT size:18];
         [_subContainer addSubview:_followingOneIcon];
         
         _followingTwoIcon = [[UILabel alloc] init];
         _followingTwoIcon.backgroundColor = [UIColor clearColor];
         _followingTwoIcon.textColor = [UIColor whiteColor];
         _followingTwoIcon.textAlignment = NSTextAlignmentCenter;
-        _followingTwoIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
+        _followingTwoIcon.font = [UIFont fontWithName:CLIMACONS_FONT size:18];
         [_subContainer addSubview:_followingTwoIcon];
         
         _followingThreeIcon = [[UILabel alloc] init];
         _followingThreeIcon.backgroundColor = [UIColor clearColor];
         _followingThreeIcon.textColor = [UIColor whiteColor];
         _followingThreeIcon.textAlignment = NSTextAlignmentCenter;
-        _followingThreeIcon.font = [UIFont fontWithName:ULTRALIGHT_FONT size:18];
+        _followingThreeIcon.font = [UIFont fontWithName:CLIMACONS_FONT size:18];
         [_subContainer addSubview:_followingThreeIcon];
         
         [self initializeMotionEffects];
@@ -152,6 +156,26 @@
         [_mainContainer addSubview:self.activityIndicator];
     }
     return self;
+}
+
+#pragma mark - set background color with pattern image based on weather
+
+- (void)setBackgroundColorWithWeatherType:(NSString *)weatherType
+{
+    NSString *lowString = weatherType.lowercaseString;
+    if ([lowString containsString:@"rain"]) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient2"]];
+    }else if ([lowString containsString:@"clear"]){
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient8"]];
+    }else if ([lowString containsString:@"cloud"] || [lowString containsString:@"fog"] || [lowString containsString:@"dust"]){
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient5"]];
+    }else if ([lowString containsString:@"thunderstorm"]){
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient0"]];
+    }else if ([lowString containsString:@""]){
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient6"]];
+    }else{
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient7"]];
+    }
 }
 
 #pragma mark UIGestureRecognizerDelegate Methods
@@ -215,6 +239,13 @@
         make.center.mas_equalTo(_mainContainer).centerOffset(CGPointMake(0, self.frame.size.height*0.3));
     }];
     
+    [_updateTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(_mainContainer);
+        make.centerX.mas_equalTo(_mainContainer.mas_centerX);
+        make.height.mas_equalTo(24);
+        make.bottom.equalTo(_mainContainer.mas_top).with.offset(-2);
+    }];
+    
     [_iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(self.frame.size.width, self.frame.size.height*0.3125));
         make.center.mas_equalTo(_mainContainer).centerOffset(CGPointMake(0, -self.frame.size.height*0.25));
@@ -223,7 +254,7 @@
     [_descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(0.75*self.frame.size.width);
         make.height.mas_equalTo(self.frame.size.height*0.18);
-        make.center.mas_equalTo(_mainContainer);
+        make.center.equalTo(_mainContainer);
     }];
     
     [_locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {

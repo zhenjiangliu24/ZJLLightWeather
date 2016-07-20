@@ -31,5 +31,7 @@
 @property (nonatomic, readonly, strong) UILabel *followingTwoIcon;
 @property (nonatomic, readonly, strong) UILabel *followingThreeLabel;
 @property (nonatomic, readonly, strong) UILabel *followingThreeIcon;
+@property (nonatomic, readonly, strong) UILabel *updateTimeLabel;
 @property (nonatomic, readonly, strong) UIActivityIndicatorView *activityIndicator;
+- (void)setBackgroundColorWithWeatherType:(NSString *)weatherType;
 @end

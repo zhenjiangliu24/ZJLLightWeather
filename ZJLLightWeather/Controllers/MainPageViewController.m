@@ -79,8 +79,8 @@
         [self initSubViews];
         [self initSettingButton];
         [self initAddButton];
-        [self initLocalWeatherView];
-        [self initUserSavedWeatherView];
+//        [self initLocalWeatherView];
+//        [self initUserSavedWeatherView];
         [self.view bringSubviewToFront:self.blurredOverlayView];
     }
     return self;
@@ -186,7 +186,7 @@
             view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gradient5"]];
             view.isLocal = NO;
             view.tag = number.integerValue;
-            [self.mainScrollView addSubview:view show:YES];
+            [self.mainScrollView addSubview:view show:NO];
             _pageControl.numberOfPages += 1;
             [self updateWeatherView:view withData:data];
         }
@@ -199,7 +199,7 @@
         return;
     }
     weatherView.hasData = YES;
-    
+    weatherView.updateTimeLabel.text = [NSString stringWithFormat:@"Updated %@", [self.dateFormatter stringFromDate:data.date]];
     weatherView.iconLabel.text = data.currentDayWeather.icon;
     weatherView.descriptionLabel.text = data.currentDayWeather.conditionDescription;
     
@@ -232,9 +232,10 @@
     weatherView.followingThreeIcon.text = day3.icon;
     
     //  Set the weather view's background color
-    CGFloat fahrenheit = MIN(MAX(0, current.fahrenheit), 99);
-    NSString *gradientImageName = [NSString stringWithFormat:@"gradient%d.png", (int)floor(fahrenheit / 10.0)];
-    weatherView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:gradientImageName]];
+//    CGFloat fahrenheit = MIN(MAX(0, current.fahrenheit), 99);
+//    NSString *gradientImageName = [NSString stringWithFormat:@"gradient%d.png", (int)floor(fahrenheit / 10.0)];
+//    weatherView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:gradientImageName]];
+    [weatherView setBackgroundColorWithWeatherType:data.currentDayWeather.conditionDescription];
 }
 
 - (void)addLocationButtonPressed
@@ -247,8 +248,10 @@
             self.descriptionLabel.alpha = 0.0;
         }];
     }
-    self.addVC = [[AddLocationViewController alloc] init];
-    self.addVC.delegate = self;
+    if (!self.addVC) {
+        self.addVC = [[AddLocationViewController alloc] init];
+        self.addVC.delegate = self;
+    }
     [self presentViewController:self.addVC animated:YES completion:nil];
 }
 
@@ -366,14 +369,23 @@
     if (status == kCLAuthorizationStatusAuthorizedAlways) {
         [self initLocalWeatherView];
         [self initUserSavedWeatherView];
+        [self showBlurredOverlayView:NO];
         [self setBlurredOverlayImage];
         [self updateWeatherData];
     }else if (status != kCLAuthorizationStatusNotDetermined){
+        [self initLocalWeatherView];
         [self initUserSavedWeatherView];
         [self setBlurredOverlayImage];
+        [self showBlurredOverlayView:NO];
         [self updateWeatherData];
     }else if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted){
-        
+        if (self.mainScrollView.subviews.count ==0) {
+            if (!self.addVC) {
+                self.addVC = [[AddLocationViewController alloc] init];
+                self.addVC.delegate = self;
+            }
+            [self presentViewController:self.addVC animated:YES completion:nil];
+        }
     }
 }
 
@@ -424,6 +436,7 @@
         _pageControl.numberOfPages += 1;
         [newView.activityIndicator startAnimating];
         [self.weatherList addObject:[NSNumber numberWithInt:placemark.locality.hash]];
+        [ZJLDataManager setWeatherTag:self.weatherList];
         [[ZJLWeatherDownloader sharedDownloader] dataForPlaceMark:placemark withTag:newView.tag complete:^(ZJLWeatherData *data, NSError *error) {
             if (data) {
                 [self downloadDidFinishWithData:data withTag:newView.tag];
