@@ -30,9 +30,13 @@
 
 #define kKeyWindow [UIApplication sharedApplication].keyWindow
 
+#define kScaleFrom_iPhone5_Desgin(_X_) (_X_ * (kScreen_Width/320))
+
+
 #define kHigher_iOS_6_1 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
 #define kHigher_iOS_6_1_DIS(_X_) ([[NSNumber numberWithBool:kHigher_iOS_6_1] intValue] * _X_)
 #define kNotHigher_iOS_6_1_DIS(_X_) (-([[NSNumber numberWithBool:kHigher_iOS_6_1] intValue]-1) * _X_)
+#define kHigher_iOS_9_0 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_0)
 
 #define kDevice_Is_iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 #define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)

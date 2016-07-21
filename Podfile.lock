@@ -16,17 +16,20 @@ PODS:
     - AFNetworking/NSURLSession
   - JazzHands (2.0.8)
   - Masonry (1.0.1)
+  - NYXImagesKit (2.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - JazzHands
   - Masonry
+  - NYXImagesKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
 
-PODFILE CHECKSUM: 77f4c0e512da8ea110344b87810065bab0188149
+PODFILE CHECKSUM: 39f1848f807010585d9e0ffb3b1f590233ccab02
 
 COCOAPODS: 1.0.0

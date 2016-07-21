@@ -34,6 +34,9 @@
 		CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */; };
 		CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */; };
 		CA4C6C651D41367A00590830 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C6C641D41367A00590830 /* IntroductionViewController.m */; };
+		CA4C6C6A1D413E7400590830 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C6C691D413E7400590830 /* SMPageControl.m */; };
+		CA4C6C6D1D41462600590830 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C6C6C1D41462600590830 /* UIColor+expanded.m */; };
+		CA4C6C701D414C2100590830 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C6C6F1D414C2100590830 /* UIImage+Resizing.m */; };
 		CAFB10EF1D3AB90D0092B906 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */; };
 		CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */; };
 /* End PBXBuildFile section */
@@ -108,6 +111,12 @@
 		CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherDownloader.m; path = ViewModels/ZJLWeatherDownloader.m; sourceTree = "<group>"; };
 		CA4C6C631D41367A00590830 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroductionViewController.h; path = Controllers/IntroductionViewController.h; sourceTree = "<group>"; };
 		CA4C6C641D41367A00590830 /* IntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroductionViewController.m; path = Controllers/IntroductionViewController.m; sourceTree = "<group>"; };
+		CA4C6C681D413E7400590830 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		CA4C6C691D413E7400590830 /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		CA4C6C6B1D41462600590830 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		CA4C6C6C1D41462600590830 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		CA4C6C6E1D414C2100590830 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
+		CA4C6C6F1D414C2100590830 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		CAFB10ED1D3AB90D0092B906 /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = Fonts/Climacons.h; sourceTree = "<group>"; };
 		CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Climacons.ttf; path = Fonts/Climacons.ttf; sourceTree = "<group>"; };
 		CAFE076A1D3D6F4B00F75661 /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLocationViewController.h; path = Controllers/AddLocationViewController.h; sourceTree = "<group>"; };
@@ -297,12 +306,34 @@
 		CA088D1D1D382B54005B046C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CA4C6C661D413E2D00590830 /* Util */,
+				CA4C6C671D413E5600590830 /* Category */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		CA4C6C661D413E2D00590830 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C6C681D413E7400590830 /* SMPageControl.h */,
+				CA4C6C691D413E7400590830 /* SMPageControl.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		CA4C6C671D413E5600590830 /* Category */ = {
+			isa = PBXGroup;
+			children = (
 				CA088D2D1D382C89005B046C /* NSString+Substring.h */,
 				CA088D2E1D382C89005B046C /* NSString+Substring.m */,
 				CA088D2F1D382C89005B046C /* UIImage+ImageEffects.h */,
 				CA088D301D382C89005B046C /* UIImage+ImageEffects.m */,
+				CA4C6C6B1D41462600590830 /* UIColor+expanded.h */,
+				CA4C6C6C1D41462600590830 /* UIColor+expanded.m */,
+				CA4C6C6E1D414C2100590830 /* UIImage+Resizing.h */,
+				CA4C6C6F1D414C2100590830 /* UIImage+Resizing.m */,
 			);
-			name = Tools;
+			name = Category;
 			sourceTree = "<group>";
 		};
 		CAFB10E61D3AB78A0092B906 /* Fonts */ = {
@@ -584,6 +615,7 @@
 				CA0D522C1D3E68A100465AF5 /* SettingViewController.m in Sources */,
 				CA088CCD1D3826D9005B046C /* main.m in Sources */,
 				CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */,
+				CA4C6C701D414C2100590830 /* UIImage+Resizing.m in Sources */,
 				CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */,
 				CA4C6C651D41367A00590830 /* IntroductionViewController.m in Sources */,
 				CA088D191D382A0D005B046C /* MainPageViewController.m in Sources */,
@@ -593,6 +625,8 @@
 				CA088D131D3829C4005B046C /* ZJLWeatherView.m in Sources */,
 				CA088D351D382F16005B046C /* ZJLWeatherData.m in Sources */,
 				CA088D1C1D382A67005B046C /* MainPageViewModel.m in Sources */,
+				CA4C6C6D1D41462600590830 /* UIColor+expanded.m in Sources */,
+				CA4C6C6A1D413E7400590830 /* SMPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

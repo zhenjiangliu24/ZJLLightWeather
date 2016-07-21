@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NYXImagesKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ZJLLightWeather.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>207FCA348A5C0F480C85BDC512E0E110</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2469C981DE6210C5ECA7BCEB85E44B05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5535BFB2B6F529E531E5AA1290731FD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6158C3AB70FD5EC2DF3DE09C274C6872</key>
 		<dict>
 			<key>primary</key>
 			<true/>
