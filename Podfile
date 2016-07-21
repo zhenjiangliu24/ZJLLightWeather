@@ -7,7 +7,7 @@ target 'ZJLLightWeather' do
 
   pod 'Masonry'
   pod 'AFNetworking', '~> 3.0'
-
+  pod 'JazzHands'
   target 'ZJLLightWeatherTests' do
     inherit! :search_paths
     # Pods for testing

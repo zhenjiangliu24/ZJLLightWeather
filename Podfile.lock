@@ -14,16 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - JazzHands (2.0.8)
   - Masonry (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - JazzHands
   - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
 
-PODFILE CHECKSUM: 1932f95c3d701279d90fa4eb78377dfa04df78e6
+PODFILE CHECKSUM: 77f4c0e512da8ea110344b87810065bab0188149
 
 COCOAPODS: 1.0.0

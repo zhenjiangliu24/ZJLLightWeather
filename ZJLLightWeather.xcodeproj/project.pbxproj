@@ -33,6 +33,7 @@
 		CA0D522C1D3E68A100465AF5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D522B1D3E68A100465AF5 /* SettingViewController.m */; };
 		CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */; };
 		CA46A7B91D39DF6C003989C3 /* ZJLWeatherDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */; };
+		CA4C6C651D41367A00590830 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4C6C641D41367A00590830 /* IntroductionViewController.m */; };
 		CAFB10EF1D3AB90D0092B906 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */; };
 		CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,8 @@
 		CA46A7B51D39CAC2003989C3 /* ZJLDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLDataManager.m; path = ViewModels/ZJLDataManager.m; sourceTree = "<group>"; };
 		CA46A7B71D39DF6C003989C3 /* ZJLWeatherDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJLWeatherDownloader.h; path = ViewModels/ZJLWeatherDownloader.h; sourceTree = "<group>"; };
 		CA46A7B81D39DF6C003989C3 /* ZJLWeatherDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJLWeatherDownloader.m; path = ViewModels/ZJLWeatherDownloader.m; sourceTree = "<group>"; };
+		CA4C6C631D41367A00590830 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroductionViewController.h; path = Controllers/IntroductionViewController.h; sourceTree = "<group>"; };
+		CA4C6C641D41367A00590830 /* IntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroductionViewController.m; path = Controllers/IntroductionViewController.m; sourceTree = "<group>"; };
 		CAFB10ED1D3AB90D0092B906 /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = Fonts/Climacons.h; sourceTree = "<group>"; };
 		CAFB10EE1D3AB90D0092B906 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Climacons.ttf; path = Fonts/Climacons.ttf; sourceTree = "<group>"; };
 		CAFE076A1D3D6F4B00F75661 /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddLocationViewController.h; path = Controllers/AddLocationViewController.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				CAFE076B1D3D6F4B00F75661 /* AddLocationViewController.m */,
 				CA0D522A1D3E68A100465AF5 /* SettingViewController.h */,
 				CA0D522B1D3E68A100465AF5 /* SettingViewController.m */,
+				CA4C6C631D41367A00590830 /* IntroductionViewController.h */,
+				CA4C6C641D41367A00590830 /* IntroductionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 				CA088CCD1D3826D9005B046C /* main.m in Sources */,
 				CAFE076C1D3D6F4B00F75661 /* AddLocationViewController.m in Sources */,
 				CA46A7B61D39CAC2003989C3 /* ZJLDataManager.m in Sources */,
+				CA4C6C651D41367A00590830 /* IntroductionViewController.m in Sources */,
 				CA088D191D382A0D005B046C /* MainPageViewController.m in Sources */,
 				CA088D311D382C89005B046C /* NSString+Substring.m in Sources */,
 				CA088D161D3829DF005B046C /* ZJLWeatherScrollView.m in Sources */,
