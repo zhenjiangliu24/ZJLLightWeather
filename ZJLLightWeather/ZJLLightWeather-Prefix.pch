@@ -17,7 +17,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "Masonry.h"
-#import <IFTTTJazzHands.h>
+#import "IFTTTJazzHands.h"
+
+#import "UIColor+expanded.h"
+#import "UIImage+Common.h"
+#import "NSString+Substring.h"
+#import "UIImage+ImageEffects.h"
+#import "UIImage+Resizing.h"
+
 #endif
 
 //版本号
@@ -50,6 +57,11 @@
 #define kLoginPaddingLeftWidth 18.0
 #define kMySegmentControl_Height 44.0
 #define kMySegmentControlIcon_Height 70.0
+#define  kNavTitleFontSize 18
+
+
+#define kColorTableSectionBg [UIColor colorWithHexString:@"0xeeeeee"]
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

@@ -8,20 +8,19 @@
 
 #import "IntroductionViewController.h"
 #import "SMPageControl.h"
-#import "UIColor+expanded.h"
-#import "UIImage+Resizing.h"
 
 @interface IntroductionViewController ()
 @property (nonatomic, strong) UIButton *startButton;
 @property (nonatomic, strong) SMPageControl *pageControl;
 
-@property (nonatomic, strong) UIImageView *planeView;
+@property (nonatomic, strong) UIImageView *plane;
 @property (nonatomic, strong) CAShapeLayer *planePathLayer;
-@property (nonatomic, strong) UIImageView *planePathView;
+@property (nonatomic, strong) UIView *planePathView;
+@property (nonatomic, strong) IFTTTPathPositionAnimation *airplaneFlyingAnimation;
+
 @end
 
 @implementation IntroductionViewController
-
 - (NSUInteger)numberOfPages
 {
     return 3;
@@ -30,16 +29,24 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        
     }
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prefersStatusBarHidden];
     self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view.
+    
+    [self configureViews];
+    [self configureAnimations];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self scaleAirplanePathToSize:self.scrollView.frame.size];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +58,7 @@
 
 - (void)configureViews
 {
+    //configure start button
     UIColor *darkColor = [UIColor colorWithHexString:@"0x28303b"];
     CGFloat buttonWidth = kScreen_Width * 0.4;
     CGFloat buttonHeight = kScaleFrom_iPhone5_Desgin(38);
@@ -72,6 +80,7 @@
         make.bottom.equalTo(self.view).offset(-paddingToBottom);
     }];
     
+    //configure page control
     UIImage *pageIndicatorImage = [UIImage imageNamed:@"intro_dot_unselected"];
     UIImage *currentPageIndicatorImage = [UIImage imageNamed:@"intro_dot_selected"];
     
@@ -96,6 +105,120 @@
         make.bottom.equalTo(self.startButton.mas_top).offset(-kScaleFrom_iPhone5_Desgin(20));
     }];
     
+    // configure plane view
+    self.planePathView = [UIView new];
+    [self.contentView addSubview:self.planePathView];
+    self.plane = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Airplane"]];
+    
+}
+
+#pragma mark - configure animations
+
+- (void)configureAnimations
+{
+    [self configureScrollViewAnimations];
+    [self configurePlaneAnimations];
+    [self animateCurrentFrame];
+}
+
+- (void)configureScrollViewAnimations
+{
+    IFTTTBackgroundColorAnimation *backgroundColorAnimation = [IFTTTBackgroundColorAnimation animationWithView:self.scrollView];
+    [backgroundColorAnimation addKeyframeForTime:0 color:[UIColor colorWithRed:174/255.0f green:130/255.0f blue:197/255.0f alpha:1.0]];
+    [backgroundColorAnimation addKeyframeForTime:1 color:[UIColor colorWithRed:76/255.0f green:123/255.0f blue:188/255.0f alpha:1.f]];
+    [backgroundColorAnimation addKeyframeForTime:1.1 color:[UIColor colorWithRed:0.14f green:0.8f blue:1.f alpha:1.f]];
+    [self.animator addAnimation:backgroundColorAnimation];
+}
+
+- (void)configurePlaneAnimations
+{
+    // Set up the view that contains the airplane view and its dashed line path view
+    self.planePathLayer = [self airplanePathLayer];
+    [self.planePathView.layer addSublayer:self.planePathLayer];
+    
+    [self.planePathView addSubview:self.plane];
+    [self.plane mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.planePathView.mas_centerY);
+        make.right.equalTo(self.planePathView.mas_centerX);
+    }];
+    
+    [self.planePathView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.scrollView).offset(55);
+        make.width.and.height.equalTo(self.plane);
+    }];
+    
+    // Keep the left edge of the planePathView at the center of pages 1 and 2
+    [self keepView:self.planePathView onPages:@[@(0),@(1), @(2)] atTimes:@[@(0),@(1), @(2)] withAttribute:IFTTTHorizontalPositionAttributeLeft];
+    
+    // Fly the plane along the path
+    self.airplaneFlyingAnimation = [IFTTTPathPositionAnimation animationWithView:self.plane path:self.planePathLayer.path];
+    [self.airplaneFlyingAnimation addKeyframeForTime:0 animationProgress:0];
+    [self.airplaneFlyingAnimation addKeyframeForTime:1 animationProgress:0.5];
+    [self.airplaneFlyingAnimation addKeyframeForTime:2 animationProgress:1];
+    [self.animator addAnimation:self.airplaneFlyingAnimation];
+    
+    // Change the stroke end of the dashed line airplane path to match the plane's current position
+    IFTTTLayerStrokeEndAnimation *planePathAnimation = [IFTTTLayerStrokeEndAnimation animationWithLayer:self.planePathLayer];
+    [planePathAnimation addKeyframeForTime:0 strokeEnd:0];
+    [planePathAnimation addKeyframeForTime:2 strokeEnd:1];
+    [self.animator addAnimation:planePathAnimation];
+    
+    // Fade the plane path view in after page 1 and fade it out again after page 2.5
+    IFTTTAlphaAnimation *planeAlphaAnimation = [IFTTTAlphaAnimation animationWithView:self.planePathView];
+    [planeAlphaAnimation addKeyframeForTime:0.0f alpha:1];
+    [planeAlphaAnimation addKeyframeForTime:1.08f alpha:1];
+    [planeAlphaAnimation addKeyframeForTime:2.5f alpha:1];
+    [planeAlphaAnimation addKeyframeForTime:3.f alpha:0];
+    [self.animator addAnimation:planeAlphaAnimation];
+}
+
+- (void)animateCurrentFrame
+{
+    [self.animator animate:self.pageOffset];
+}
+
+
+#pragma mark - scale plane path
+
+- (CGPathRef)airplanePath
+{
+    // Create a bezier path for the airplane to fly along
+    UIBezierPath *airplanePath = [UIBezierPath bezierPath];
+    [airplanePath moveToPoint: CGPointMake(40, -300)];
+    [airplanePath addCurveToPoint: CGPointMake(120, -130) controlPoint1: CGPointMake(60, -220) controlPoint2: CGPointMake(80, -200)];
+    [airplanePath addCurveToPoint: CGPointMake(30, -430) controlPoint1: CGPointMake(-60, -210) controlPoint2: CGPointMake(-320, -430)];
+    [airplanePath addCurveToPoint: CGPointMake(-210, -190) controlPoint1: CGPointMake(320, -430) controlPoint2: CGPointMake(130, -190)];
+    
+    return airplanePath.CGPath;
+}
+
+- (CAShapeLayer *)airplanePathLayer
+{
+    // Create a shape layer to draw the airplane's path
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = [self airplanePath];
+    shapeLayer.fillColor = nil;
+    shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
+    shapeLayer.lineDashPattern = @[@(20), @(20)];
+    shapeLayer.lineWidth = 4;
+    shapeLayer.miterLimit = 4;
+    shapeLayer.fillRule = kCAFillRuleEvenOdd;
+    
+    return shapeLayer;
+}
+
+- (void)scaleAirplanePathToSize:(CGSize)pageSize
+{
+    // Scale the airplane path to the given page size
+    CGSize scaleSize = CGSizeMake(pageSize.width / 375.f, pageSize.height / 667.f);
+    
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(scaleSize.width, scaleSize.height);
+    
+    CGPathRef scaledPath = CGPathCreateCopyByTransformingPath(self.airplanePath, &scaleTransform);
+    
+    self.planePathLayer.path = scaledPath;
+    self.airplaneFlyingAnimation.path = scaledPath;
+    CGPathRelease(scaledPath);
 }
 
 #pragma mark - start button clicked
@@ -128,7 +251,7 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        //[self scaleAirplanePathToSize:size];
+        [self scaleAirplanePathToSize:size];
     } completion:nil];
 }
 
@@ -149,7 +272,7 @@
         }
     
     [UIView animateWithDuration:duration animations:^{
-        //[self scaleAirplanePathToSize:newPageSize];
+        [self scaleAirplanePathToSize:newPageSize];
     } completion:nil];
 }
 
