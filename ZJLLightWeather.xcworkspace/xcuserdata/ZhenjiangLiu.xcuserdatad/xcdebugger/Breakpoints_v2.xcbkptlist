@@ -323,5 +323,84 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
+            timestampString = "490921626.015703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
+            landmarkName = "-downloadDataFor:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[MainPageViewController downloadDataFor:]_block_invoke"
+                  moduleName = "ZJLLightWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZhenjiangLiu/Documents/ios/oc/ZJLLightWeather/ZJLLightWeather/Controllers/MainPageViewController.m"
+                  timestampString = "490921626.096313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "298"
+                  endingLineNumber = "298"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.334"
+                  moduleName = "ZJLLightWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZhenjiangLiu/Documents/ios/oc/ZJLLightWeather/ZJLLightWeather/Controllers/MainPageViewController.m"
+                  timestampString = "490921626.103892"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "298"
+                  endingLineNumber = "298"
+                  offsetFromSymbolStart = "98">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.335"
+                  moduleName = "ZJLLightWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZhenjiangLiu/Documents/ios/oc/ZJLLightWeather/ZJLLightWeather/Controllers/MainPageViewController.m"
+                  timestampString = "490921626.10404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "298"
+                  endingLineNumber = "298"
+                  offsetFromSymbolStart = "71">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
+            timestampString = "490921627.917246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
+            landmarkName = "-downloadDataFor:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

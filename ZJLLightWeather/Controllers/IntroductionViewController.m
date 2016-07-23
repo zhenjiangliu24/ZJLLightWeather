@@ -8,6 +8,7 @@
 
 #import "IntroductionViewController.h"
 #import "SMPageControl.h"
+#import "MainPageViewController.h"
 
 @interface IntroductionViewController ()
 @property (nonatomic, strong) UIButton *startButton;
@@ -17,6 +18,11 @@
 @property (nonatomic, strong) CAShapeLayer *planePathLayer;
 @property (nonatomic, strong) UIView *planePathView;
 @property (nonatomic, strong) IFTTTPathPositionAnimation *airplaneFlyingAnimation;
+
+
+@property (nonatomic, strong) UIImageView *sun;
+
+@property (nonatomic, strong) UIImageView *bigCloud;
 
 @end
 
@@ -110,6 +116,13 @@
     [self.contentView addSubview:self.planePathView];
     self.plane = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Airplane"]];
     
+    //configure sun
+    self.sun = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Sun"]];
+    [self.contentView addSubview:self.sun];
+    
+    //configure big cloud
+    self.bigCloud = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BigCloud"]];
+    [self.contentView addSubview:self.bigCloud];
 }
 
 #pragma mark - configure animations
@@ -119,6 +132,9 @@
     [self configureScrollViewAnimations];
     [self configurePlaneAnimations];
     [self animateCurrentFrame];
+    [self configureSun];
+    [self configureBigCloud];
+    [self configureStartButton];
 }
 
 - (void)configureScrollViewAnimations
@@ -143,18 +159,18 @@
     }];
     
     [self.planePathView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.scrollView).offset(55);
+        make.bottom.equalTo(self.scrollView).offset(15);
         make.width.and.height.equalTo(self.plane);
     }];
     
     // Keep the left edge of the planePathView at the center of pages 1 and 2
-    [self keepView:self.planePathView onPages:@[@(0),@(1), @(2)] atTimes:@[@(0),@(1), @(2)] withAttribute:IFTTTHorizontalPositionAttributeLeft];
+    [self keepView:self.planePathView onPages:@[@(0),@(1),@(2)] atTimes:@[@(0),@(1),@(2)] withAttribute:IFTTTHorizontalPositionAttributeLeft];
     
     // Fly the plane along the path
     self.airplaneFlyingAnimation = [IFTTTPathPositionAnimation animationWithView:self.plane path:self.planePathLayer.path];
     [self.airplaneFlyingAnimation addKeyframeForTime:0 animationProgress:0];
     [self.airplaneFlyingAnimation addKeyframeForTime:1 animationProgress:0.5];
-    [self.airplaneFlyingAnimation addKeyframeForTime:2 animationProgress:1];
+    [self.airplaneFlyingAnimation addKeyframeForTime:2 animationProgress:0.95];
     [self.animator addAnimation:self.airplaneFlyingAnimation];
     
     // Change the stroke end of the dashed line airplane path to match the plane's current position
@@ -172,6 +188,63 @@
     [self.animator addAnimation:planeAlphaAnimation];
 }
 
+- (void)configureSun
+{
+    [self keepView:self.sun onPages:@[@(1.8),@(1.6)] atTimes:@[@(1.5),@(2)]];
+    
+    NSLayoutConstraint *sunVerticalConstraint = [NSLayoutConstraint constraintWithItem:self.sun
+                                                                             attribute:NSLayoutAttributeCenterY
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self.contentView
+                                                                             attribute:NSLayoutAttributeTop
+                                                                            multiplier:1.f constant:0.f];
+    
+    [self.contentView addConstraint:sunVerticalConstraint];
+    IFTTTConstraintConstantAnimation *sunVerticalAnimation = [IFTTTConstraintConstantAnimation animationWithSuperview:self.contentView constraint:sunVerticalConstraint];
+    [sunVerticalAnimation addKeyframeForTime:1 constant:-200.f];
+    [sunVerticalAnimation addKeyframeForTime:2 constant:20.f];
+    [self.animator addAnimation:sunVerticalAnimation];
+}
+
+- (void)configureBigCloud
+{
+    [self.bigCloud mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.lessThanOrEqualTo(self.scrollView).multipliedBy(0.58);
+        make.height.lessThanOrEqualTo(self.scrollView).multipliedBy(0.2);
+        make.height.equalTo(self.bigCloud.mas_width).multipliedBy(0.45);
+    }];
+    [self keepView:self.bigCloud onPages:@[@(1)] atTimes:@[@(0)]];
+    
+    // Move the big cloud down from above the screen on page 1 to near the top of the screen on page 2
+    NSLayoutConstraint *bigCloudVerticalConstraint = [NSLayoutConstraint constraintWithItem:self.bigCloud
+                                                                                                       attribute:NSLayoutAttributeCenterY
+                                                                                  relatedBy:NSLayoutRelationEqual
+                                                                                     toItem:self.contentView
+                                                                                  attribute:NSLayoutAttributeTop
+                                                                                 multiplier:1.f constant:0.f];
+    
+    [self.contentView addConstraint:bigCloudVerticalConstraint];
+    
+    IFTTTConstraintMultiplierAnimation *bigCloudVerticalAnimation = [IFTTTConstraintMultiplierAnimation animationWithSuperview:self.contentView
+                                                                                                                    constraint:bigCloudVerticalConstraint
+                                                                                                                     attribute:IFTTTLayoutAttributeHeight
+                                                                                                                 referenceView:self.contentView];
+    [bigCloudVerticalAnimation addKeyframeForTime:0.5 multiplier:-0.2f];
+    [bigCloudVerticalAnimation addKeyframeForTime:1 multiplier:0.2f];
+    [self.animator addAnimation:bigCloudVerticalAnimation];
+    
+    
+}
+
+- (void)configureStartButton
+{
+    IFTTTAlphaAnimation *startButtonAnimation = [[IFTTTAlphaAnimation alloc] initWithView:self.startButton];
+    [startButtonAnimation addKeyframeForTime:0 alpha:0];
+    [startButtonAnimation addKeyframeForTime:1 alpha:0];
+    [startButtonAnimation addKeyframeForTime:2 alpha:1.0];
+    [self.animator addAnimation:startButtonAnimation];
+}
+
 - (void)animateCurrentFrame
 {
     [self.animator animate:self.pageOffset];
@@ -184,10 +257,10 @@
 {
     // Create a bezier path for the airplane to fly along
     UIBezierPath *airplanePath = [UIBezierPath bezierPath];
-    [airplanePath moveToPoint: CGPointMake(40, -300)];
-    [airplanePath addCurveToPoint: CGPointMake(120, -130) controlPoint1: CGPointMake(60, -220) controlPoint2: CGPointMake(80, -200)];
-    [airplanePath addCurveToPoint: CGPointMake(30, -430) controlPoint1: CGPointMake(-60, -210) controlPoint2: CGPointMake(-320, -430)];
-    [airplanePath addCurveToPoint: CGPointMake(-210, -190) controlPoint1: CGPointMake(320, -430) controlPoint2: CGPointMake(130, -190)];
+    [airplanePath moveToPoint: CGPointMake(120, -120)];
+    [airplanePath addCurveToPoint: CGPointMake(360, -400) controlPoint1: CGPointMake(260, -10) controlPoint2: CGPointMake(330, -580)];
+    [airplanePath addCurveToPoint: CGPointMake(100, 0) controlPoint1: CGPointMake(400, -110) controlPoint2: CGPointMake(160, -300)];
+//    [airplanePath addCurveToPoint: CGPointMake(30, -590) controlPoint1: CGPointMake(320, -430) controlPoint2: CGPointMake(130, -190)];
     
     return airplanePath.CGPath;
 }
@@ -224,7 +297,8 @@
 #pragma mark - start button clicked
 - (void)startButtonClicked
 {
-    
+    MainPageViewController *mainVC = [[MainPageViewController alloc] init];
+    [self presentViewController:mainVC animated:YES completion:nil];
 }
 
 #pragma mark - phone orientation
