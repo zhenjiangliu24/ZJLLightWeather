@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/ViewModels/ZJLWeatherDownloader.m"
-            timestampString = "490574096.240153"
+            timestampString = "491233915.147301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-dataForLocation:placemark:withTag:complete:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/ViewModels/ZJLWeatherDownloader.m"
-            timestampString = "490574133.975583"
+            timestampString = "491233915.147301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-dataForLocation:placemark:withTag:complete:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490629073.042382"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-initLocalWeatherView"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490629073.042382"
+            timestampString = "491234736.668406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-initWithNibName:bundle:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "-settingsButtonPressed"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/ViewModels/ZJLWeatherDownloader.m"
-            timestampString = "490656929.78639"
+            timestampString = "491233915.147301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-dataFromJSON:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "-didAddLocationWithPlaceMark:"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490658156.826191"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-initUserSavedWeatherView"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,23 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490658292.652731"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "-initWithNibName:bundle:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490658651.101824"
+            timestampString = "491234736.668406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -298,11 +282,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490725471.145041"
+            timestampString = "491234736.668406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-initWithNibName:bundle:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
+            timestampString = "491235742.731865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "-locationManager:didChangeAuthorizationStatus:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490921626.015703"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "-downloadDataFor:"
             landmarkType = "5">
             <Locations>
@@ -389,17 +389,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
-            timestampString = "490921627.917246"
+            timestampString = "491235742.731865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "-downloadDataFor:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZJLLightWeather/ViewModels/ZJLWeatherDownloader.m"
+            timestampString = "491233576.033656"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-dataForLocation:placemark:withTag:complete:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZJLLightWeather/Controllers/MainPageViewController.m"
+            timestampString = "491235742.731865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
+            landmarkName = "-downloadDidFailForWeatherViewWithTag:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainPageViewController downloadDidFailForWeatherViewWithTag:]"
+                  moduleName = "ZJLLightWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZhenjiangLiu/Documents/ios/oc/ZJLLightWeather/ZJLLightWeather/Controllers/MainPageViewController.m"
+                  timestampString = "491233734.046936"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "318"
+                  endingLineNumber = "318"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainPageViewController downloadDidFailForWeatherViewWithTag:]"
+                  moduleName = "ZJLLightWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ZhenjiangLiu/Documents/ios/oc/ZJLLightWeather/ZJLLightWeather/Controllers/MainPageViewController.m"
+                  timestampString = "491233734.047059"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "318"
+                  endingLineNumber = "318"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -53,6 +53,8 @@ NSString *const API = @"d5fda838420e3f7f";
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            complete(nil, [NSError errorWithDomain:@"Downloader Internal State Error" code:-1 userInfo:nil]);
         } else {
             NSLog(@"%@ %@", response, responseObject);
             //NSData *data = (NSData *)responseObject;

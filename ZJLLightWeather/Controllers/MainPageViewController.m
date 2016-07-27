@@ -12,6 +12,7 @@
 #import "ZJLWeatherDownloader.h"
 #import "UIImage+ImageEffects.h"
 #import "Climacons.h"
+#import "SMPageControl.h"
 
 #define LIGHT_FONT      @"HelveticaNeue-Light"
 #define ULTRALIGHT_FONT @"HelveticaNeue-UltraLight"
@@ -130,6 +131,10 @@
     [self.view addSubview:self.blurredOverlayView];
     
     _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)-32, CGRectGetWidth(self.view.frame), 32)];
+//    [_pageControl setImage:[UIImage imageNamed:@"currentLocation"] forPage:0];
+//    _pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot"];
+//    _pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"currentPageDot"];
+    //[_pageControl sizeToFit];
     [_pageControl setHidesForSinglePage:YES];
     [self.view addSubview:_pageControl];
 }
@@ -316,13 +321,14 @@
 - (void)downloadDidFailForWeatherViewWithTag:(NSInteger)tag
 {
     for (ZJLWeatherView *weatherView in self.mainScrollView.subviews) {
-        if (weatherView.tag == tag) {
-            if (!weatherView.hasData) {
-                weatherView.iconLabel.text = @"☹";
-                weatherView.descriptionLabel.text = @"Update failed";
-                weatherView.locationLabel.text = @"Please check the Network";
-            }
-        }
+        weatherView.iconLabel.text = @"☹";
+        weatherView.descriptionLabel.text = @"Update failed";
+        weatherView.locationLabel.text = @"Please check the Network";
+//        if (weatherView.tag == tag) {
+//            if (!weatherView.hasData) {
+//                
+//            }
+//        }
         [weatherView.activityIndicator stopAnimating];
     }
 }
